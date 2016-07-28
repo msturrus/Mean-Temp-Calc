@@ -1,5 +1,5 @@
 window.onload = function() {
-  getLocation();
+  // getLocation();
 
 }
 
@@ -8,6 +8,14 @@ var key = "97d75d4923f1734e25639e0e89ca9ce9";
 var longitude, latitude, url;
 var dayRange = [];
 var totalAverage = 0;
+var cityInput = $('#city-lookup');
+
+new Awesomplete(cityInput,
+         {
+             list: cityDB().get().map(c => c.name), // list is all the cities in the DB
+             autoFirst: true,
+             filter: Awesomplete.FILTER_STARTSWITH, // case insensitive from start of word
+         });
 
 
 function getLocation() {

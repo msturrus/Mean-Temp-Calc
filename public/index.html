@@ -4,11 +4,19 @@
     <title>Weather Query</title>
     <link rel='stylesheet' href='stylesheets/normalize.css' />
     <link rel='stylesheet' href='stylesheets/jquery-ui.css' />
-
     <link rel='stylesheet' href='stylesheets/bootstrap.css' />
+
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script type="text/javascript" src="scripts/jquery-ui.js"></script>
-    <script type="text/javascript" src="scripts/city.list.us.json"></script>
+    <!-- <script type="text/javascript" src="scripts/city.list.us.json"></script> -->
+
+    <!-- Awesomeplete -->
+    <script type="text/javascript" src="scripts/awesomeplete.js"></script>
+    <link rel="stylesheet" href="stylesheets/awesomeplete.css" />
+
+    <!-- TaffyDB -->
+    <script type="text/javascript" src="scripts/taffydb.js"></script>
+    <script type="text/javascript" src="scripts/citydb.js"></script>
 
   </head>
     <!-- Static navbar -->
@@ -39,13 +47,13 @@
               <section class="panel-body upload-font">
                 <div class="col-xs-6">
                   <label for="">Enter City:</label>
-                  <input type="test" id="hand1"><span id="hand1-info"></span>
-                  <button onclick="getLocation()">Try It</button>
+                  <input type="text" id="city"><span id="city-lookup"></span>
+                  <button id="get-location-btn" onclick="getLocation()">Get Current Location</button>
                 </div>
                 <div class="col-xs-6">
                   <label for="">Between:</label><br>
-                  <input type="test" id="start-date" placeholder="start date"><span> and </span>
-                  <input type="test" id="end-date" placeholder="end date">
+                  <input type="text" id="start-date" placeholder="start date"><span> and </span>
+                  <input type="text" id="end-date" placeholder="end date">
                   <button id="getBtn">Get Average</button>
                 </div>
               </section>
