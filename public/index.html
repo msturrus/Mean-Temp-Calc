@@ -4,14 +4,12 @@
     <title>Weather Query</title>
     <link rel='stylesheet' href='stylesheets/normalize.css' />
     <link rel='stylesheet' href='stylesheets/jquery-ui.css' />
-    <link rel='stylesheet' href='stylesheets/jquery-ui.css' />
-    <link rel='stylesheet' href='stylesheets/jquery-ui.css' />
 
     <link rel='stylesheet' href='stylesheets/bootstrap.css' />
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-    <script type="text/javascript" src="scripts/jquery-ui.js">
+    <script type="text/javascript" src="scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="scripts/city.list.us.json"></script>
 
-    </script>
   </head>
     <!-- Static navbar -->
     <nav class="navbar navbar-default">
@@ -23,7 +21,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"> Yapmo Weather Query</a>
+          <a class="navbar-brand" href="/"> Temp Lookup</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -48,7 +46,7 @@
                   <label for="">Between:</label><br>
                   <input type="test" id="start-date" placeholder="start date"><span> and </span>
                   <input type="test" id="end-date" placeholder="end date">
-                  <button id="getBtn">Get Weather</button>
+                  <button id="getBtn">Get Average</button>
                 </div>
               </section>
             </div>
