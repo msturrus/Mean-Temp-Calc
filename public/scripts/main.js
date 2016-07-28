@@ -108,6 +108,7 @@ $( function() {
 
 
 $('#getBtn').on('click', function () {
+    dayRange = [];
     var start = $("#start-date").datepicker("getDate"),
         end = $("#end-date").datepicker("getDate"),
         currentDate = new Date(start);
@@ -119,8 +120,6 @@ $('#getBtn').on('click', function () {
     console.log(dayRange)
     getTotalAverage();
 });
-
-console.log((new Date("2013-09-05 15:34:00")).getTime() / 1000)
 
 function getTotalAverage() {
   dayRange.map(function(date, i) {
@@ -149,6 +148,7 @@ function getTotalAverage() {
           console.log("=================")
           console.log("The total average temperature is " + totalAverage)
           console.log("=================")
+          $('#output').html(totalAverage);
         },
         error: function(error) {
           console.log(error);
@@ -160,3 +160,5 @@ function getTotalAverage() {
     // console.log("=================")
   })
 }
+
+// http-server -c-1
