@@ -1,3 +1,0 @@
-var key = "97d75d4923f1734e25639e0e89ca9ce9";
-
-var wuKey = "8aac6646af680738277278a79aacc609";

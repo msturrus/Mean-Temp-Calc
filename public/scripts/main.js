@@ -1,6 +1,5 @@
 window.onload = function() {
-  // getLocation();
-
+  getLocation();
 }
 
 var key = "97d75d4923f1734e25639e0e89ca9ce9";
@@ -10,12 +9,12 @@ var dayRange = [];
 var totalAverage = 0;
 var cityInput = $('#city-lookup');
 
-new Awesomplete(cityInput,
-         {
-             list: cityDB().get().map(c => c.name), // list is all the cities in the DB
-             autoFirst: true,
-             filter: Awesomplete.FILTER_STARTSWITH, // case insensitive from start of word
-         });
+// new Awesomplete(cityInput,
+//          {
+//              list: cityDB().get().map(c => c.name), // list is all the cities in the DB
+//              autoFirst: true,
+//              filter: Awesomplete.FILTER_STARTSWITH, // case insensitive from start of word
+//          });
 
 
 function getLocation() {
@@ -73,9 +72,8 @@ function getTotalAverage() {
       type: 'get',
       dataType: 'jsonp',
       url: formatURL() + unixDate,
-      // url: 'https://api.forecast.io/forecast/97d75d4923f1734e25639e0e89ca9ce9/41.89750783254016,-87.62264634048636,' + unixDate,
         success: function(data) {
-          console.log('we got that data');
+          console.log('the data has arrived');
           var totalTemp = 0;
           var hours = data.hourly.data;
           hours.map(function(hour, i) {
@@ -83,18 +81,19 @@ function getTotalAverage() {
           });
           var averageTemp = totalTemp / hours.length;
           runningTotal += averageTemp;
-          console.log(runningTotal);
           totalAverage = runningTotal / dayRange.length;
-          console.log("=================");
           console.log("The total average temperature is " + totalAverage);
-          console.log("=================");
-          $('#output').html(Math.round(totalAverage * 100) / 100 + "&deg; F");
+          formatTotal(totalAverage);
         },
         error: function(error) {
           console.log(error);
         }
     });
   });
+};
+
+function formatTotal(totalAverage) {
+  $('#output').html("The average daily temperature for those dates is " + Math.round(totalAverage * 100) / 100 + "&deg; F");
 };
 
 // http-server -c-1
