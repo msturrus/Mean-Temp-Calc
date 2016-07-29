@@ -9,6 +9,9 @@ var dayRange = [];
 var totalAverage = 0;
 var cityInput = $('#city-lookup');
 
+latitude = "41.8977778";
+longitude = "-87.6227471";
+
 // new Awesomplete(cityInput,
 //          {
 //              list: cityDB().get().map(c => c.name), // list is all the cities in the DB
@@ -22,16 +25,23 @@ function getLocation() {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
         console.log("Gelocation not available");
-        $('footer').html("Geolocation is not supported by this browser.");
+        $('footer').html("Geolocation is not supported/not allowed by this browser.  Using fallback lattitude/longitude");
+        latitude = "41.8977778";
+        longitude = "-87.6227471";
     }
 };
 
 function showPosition(position) {
+    if (position) {
     console.log(position);
     longitude = position.coords.longitude;
     latitude = position.coords.latitude
     $('footer').html("Latitude: " + position.coords.latitude +
     "<br>Longitude: " + position.coords.longitude);
+  } else {
+    latitude = "41.8977778";
+    longitude = "-87.6227471";
+  }
 };
 
 
