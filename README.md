@@ -26,7 +26,7 @@ Open `public/index.html` in your preferred web browser or host it if you like. I
 
 - Project should work without any cross-origin errors from the index.html file but works best if it's hosted
 - Chrome does not allow location access from files or http, location access is https only, disabling this app's location feature in certain contexts with that browser
-- Styles are copied from previous projects, and are appended to bootstrap.css due to the way wrote my gulpfile to handle LESS during those projects.  That is why there are non-bootstrap styles but no styles.css file.
+- Styles are copied from previous projects, and are appended to bootstrap.css due to the way I wrote my gulpfile to handle LESS during those projects.  That is why there are non-bootstrap styles but no styles.css file.
 
 
 ## Special Thanks:
