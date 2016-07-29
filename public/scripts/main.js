@@ -68,8 +68,6 @@ function showPosition(position) {
     console.log(position);
     longitude = position.coords.longitude;
     latitude = position.coords.latitude
-    $('footer').html("Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude);
   } else {
     latitude = "41.8977778";
     longitude = "-87.6227471";
@@ -145,53 +143,7 @@ function formatTotal(totalAverage) {
   $('#output').html("The average daily temperature for those dates is " + Math.round(totalAverage * 100) / 100 + "&deg; F");
 };
 
-var map;
 
-// Update position
-$(document).on('submit', '.edit_marker', function(e) {
-  e.preventDefault();
 
-  var $index = $(this).data('marker-index');
-
-  $lat = $('#marker_' + $index + '_lat').val();
-  $lng = $('#marker_' + $index + '_lng').val();
-
-  var template = $('#edit_marker_template').text();
-
-  // Update form values
-  var content = template.replace(/{{index}}/g, $index).replace(/{{lat}}/g, $lat).replace(/{{lng}}/g, $lng);
-
-  map.markers[$index].setPosition(new google.maps.LatLng($lat, $lng));
-  map.markers[$index].infoWindow.setContent(content);
-
-  $marker = $('#markers-with-coordinates').find('li').eq(0).find('a');
-  $marker.data('marker-lat', $lat);
-  $marker.data('marker-lng', $lng);
-});
-
-// Update center
-$("document").on('click', '.pan-to-marker', function(e) {
-  e.preventDefault();
-
-  var lat, lng;
-
-  var $index = $(this).data('marker-index');
-  var $lat = $(this).data('marker-lat');
-  var $lng = $(this).data('marker-lng');
-
-  if ($index != undefined) {
-    // using indices
-    var position = map.markers[$index].getPosition();
-    lat = position.lat();
-    lng = position.lng();
-  }
-  else {
-    // using coordinates
-    lat = $lat;
-    lng = $lng;
-  }
-
-  map.setCenter(lat, lng);
-});
 
 // // http-server -c-1
