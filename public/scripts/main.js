@@ -55,6 +55,8 @@ function initMap() {
       $("#coordinate").select();
       if (marker) { marker.setMap(null); }
       marker = new google.maps.Marker({ position: event.latLng, map: map});
+      $("#lat").html(latitude);
+      $("#lon").html(longitude);
     });
 }
 

@@ -2,9 +2,9 @@
 
 ## Yapmo Average Temperature Calculator
 
-Version: 0.5
+Version: 0.7, Now with googlemaps!
 
-Current status: Temperature Calculator and user current location working, data visualizations not yet implemented.  US City Search, Autocomplete, not functional due to database hiccup (the file I found that would serve as my database had invalid json).
+Current status: Temperature Calculator and user current location working, data visualizations not yet implemented.  US City Search, Autocomplete, not functional due to database hiccup (the file I found that would serve as my database had invalid json).  Also, googlemaps.
 
 This app takes user inputs in the form of a location and a date range, then retrieves hourly temperature data for all days within that range from the forecast.io api.  It then calculates the average daily temperature for that date range based on the data it receives.
 
@@ -32,3 +32,4 @@ Open `public/index.html` in your preferred web browser or host it if you like. I
 ## Special Thanks:
 
 - forecast.io
+- google
