@@ -2,37 +2,6 @@ window.onload = function() {
 
   // Get location info on window load
   getLocation();
-  // prettyPrint();
-  // map = new GMaps({
-  //   div: '#map',
-  //   lat: 41.8977778,
-  //   lng: 41.8977778
-  // });
-  //
-  // GMaps.on('marker_added', map, function(marker) {
-  //   $('#markers-with-index').append('<li><a href="#" class="pan-to-marker" data-marker-index="' + map.markers.indexOf(marker) + '">' + marker.title + '</a></li>');
-  //
-  //   $('#markers-with-coordinates').append('<li><a href="#" class="pan-to-marker" data-marker-lat="' + marker.getPosition().lat() + '" data-marker-lng="' + marker.getPosition().lng() + '">' + marker.title + '</a></li>');
-  // });
-  //
-  // GMaps.on('click', map.map, function(event) {
-  //   var index = map.markers.length;
-  //   var lat = event.latLng.lat();
-  //   var lng = event.latLng.lng();
-  //
-  //   var template = $('#edit_marker_template').text();
-  //
-  //   var content = template.replace(/{{index}}/g, index).replace(/{{lat}}/g, lat).replace(/{{lng}}/g, lng);
-  //
-  //   map.addMarker({
-  //     lat: lat,
-  //     lng: lng,
-  //     title: 'Marker #' + index,
-  //     infoWindow: {
-  //       content : content
-  //     }
-  //   });
-  // });
 
 }
 
@@ -225,37 +194,4 @@ $("document").on('click', '.pan-to-marker', function(e) {
   map.setCenter(lat, lng);
 });
 
-// $(document).ready(function(){
-//   prettyPrint();
-//   map = new GMaps({
-//     div: '#map',
-//     lat: -12.043333,
-//     lng: -77.028333
-//   });
-//
-//   GMaps.on('marker_added', map, function(marker) {
-//     $('#markers-with-index').append('<li><a href="#" class="pan-to-marker" data-marker-index="' + map.markers.indexOf(marker) + '">' + marker.title + '</a></li>');
-//
-//     $('#markers-with-coordinates').append('<li><a href="#" class="pan-to-marker" data-marker-lat="' + marker.getPosition().lat() + '" data-marker-lng="' + marker.getPosition().lng() + '">' + marker.title + '</a></li>');
-//   });
-//
-//   GMaps.on('click', map.map, function(event) {
-//     var index = map.markers.length;
-//     var lat = event.latLng.lat();
-//     var lng = event.latLng.lng();
-//
-//     var template = $('#edit_marker_template').text();
-//
-//     var content = template.replace(/{{index}}/g, index).replace(/{{lat}}/g, lat).replace(/{{lng}}/g, lng);
-//
-//     map.addMarker({
-//       lat: lat,
-//       lng: lng,
-//       title: 'Marker #' + index,
-//       infoWindow: {
-//         content : content
-//       }
-//     });
-//   });
-// });
 // // http-server -c-1
