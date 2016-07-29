@@ -4,7 +4,7 @@
 
 Version: 0.5
 
-Current status: Temperature Calculator and user current location working, data visualizations not yet implemented.  US City Search, Autocomplete, not functional due to database hiccup (the file I found had invalid json).
+Current status: Temperature Calculator and user current location working, data visualizations not yet implemented.  US City Search, Autocomplete, not functional due to database hiccup (the file I found that would serve as my database had invalid json).
 
 This app takes user inputs in the form of a location and a date range, then retrieves hourly temperature data for all days within that range from the forecast.io api.  It then calculates the average daily temperature for that date range based on the data it receives.
 
